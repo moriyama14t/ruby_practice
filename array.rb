@@ -1,5 +1,6 @@
 # 【参考】https://qiita.com/jnchito/items/118cca7ac2f01e1ca6a0
 #       https://qiita.com/yyykms123/items/e1bcb838f56100d12025
+#       https://qiita.com/may88seiji/items/ce9396a4c267a3d449ae
 
 p 'compact/compact!(nilの要素を取り除いた配列を新しく生成)'
 a = [1, nil, 'abc', false]
@@ -72,3 +73,22 @@ p 'ブロックを簡潔に書く(&:)'
 # こう書き換えられる
 [1, 2, 3, 4, 5, 6].select(&:odd?)
 #=> [1, 3, 5]
+
+p '.to_a で配列(Array)にできる'
+p (1..5).to_a
+# [1,2,3,4,5]
+
+p '引数に削除した要素を指定 indexを指定、空の配列を代入することで削除も可能'
+array  = ["a","b","c","d","f"]
+
+#[index番号, 削除する個数]で指定
+array[0,4] = []
+p array
+#["f"]
+
+# concat 配列の結合
+arrayA  = ["a", "b", "c"]
+arrayB  = ["d", "e", "f"]
+arrayA.concat(arrayB)
+p arrayA
+#["a", "b", "c", "d", "e", "f"]
